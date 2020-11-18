@@ -28,5 +28,11 @@ $app->group('/api/v1', function(){
 		$produto = Produto::create( $dados );
 		return $response->withJson( $produto );
 
-	});
+    });
+    
+    //recupera produto para um determinado ID
+    $this->get('/produtos/lista/{id}', function($request, $response, $args){
+        $produto = Produto::findOrFail($args['id']);
+        return $response->withJson($produto);
+    });
 });
