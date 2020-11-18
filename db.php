@@ -27,7 +27,7 @@ $schema->create($tabela, function($table){
     $table->text('descricao');
     $table->decimal('preco', 11, 2);
     $table->string('fabricante');
-    $table->date('dt_criacao');
+    $table->timestamps();
 });
 
 $db->table($tabela)->insert([
@@ -35,7 +35,8 @@ $db->table($tabela)->insert([
     'descricao' => 'Android Oreo - 8.0 Tela 5.7',
     'preco' => 899.99,
     'fabricante' => 'Motorola',
-    'dt_criacao' => '2019-10-22'
+    'created_at' => '2019-10-22',
+    'updated_at' => '2019-10-22'
 ]);
 
 $db->table($tabela)->insert([
@@ -43,5 +44,6 @@ $db->table($tabela)->insert([
     'descricao' => 'Tela 5.8" IOS 12 4G Wi-fi Camera 12MP',
     'preco' => 4999.00,
     'fabricante' => 'Apple',
-    'dt_criacao' => '2020-11-27'
+    'created_at' => '2019-10-22',
+    'updated_at' => '2019-10-22'
 ]);
