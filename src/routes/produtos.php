@@ -2,6 +2,7 @@
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use App\Models\Produto;
 
 /*
 ORM - Object Relation Mapper
@@ -12,6 +13,7 @@ Eloquent ORM
 //Rotas para produtos
 $app->group('/api/v1', function(){
     $this->get('/produtos/lista', function($request, $response){
-        return $response->withJson(['nome' => 'Moto G']);
+        $produtos = Produto::get();
+        return $response->withJson($produtos);
     });
 });
