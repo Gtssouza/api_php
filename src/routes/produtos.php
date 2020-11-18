@@ -35,4 +35,14 @@ $app->group('/api/v1', function(){
         $produto = Produto::findOrFail($args['id']);
         return $response->withJson($produto);
     });
+
+    // Atualiza produto para um determinado ID
+	$this->post('/produtos/atualiza/{id}', function($request, $response, $args){
+		
+		$dados = $request->getParsedBody();
+		$produto = Produto::findOrFail( $args['id'] );
+		$produto->update( $dados );
+		return $response->withJson( $produto );
+
+	});
 });
