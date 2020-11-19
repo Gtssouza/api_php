@@ -8,7 +8,7 @@ $app->options('/{routes:.+}', function ($request, $response, $args) {
 });
 
 // Routes
-//require __DIR__ . '/routes/autenticacao.php';
+require __DIR__ . '/routes/autenticacao.php';
 
 require __DIR__ . '/routes/produtos.php';
 
