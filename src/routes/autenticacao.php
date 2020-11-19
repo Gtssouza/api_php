@@ -23,7 +23,11 @@ $app->post('/api/token', function($request, $response){
         $chaveAcesso = JWT::encode($usuario, $secretKey);
 
         return $response->withJson([
-            
+            'chave' => $chaveAcesso
         ]);
     }
+
+    return $response->withJson([
+        'status' => 'erro'
+    ]);
 });
